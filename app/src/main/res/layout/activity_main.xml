@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_EEEEEE"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/gray_333333"
+        android:theme="@style/ToolbarMenuTheme"
+        android:title="@string/order_list"
+        android:titleTextColor="@android:color/white" />
+
+    <LinearLayout
+        android:id="@+id/search_area"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/toolbar"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/key_edit"
+                style="@style/CommonEditStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/hint_input_keyword"
+                android:inputType="text"
+                android:textSize="14sp"
+                tools:ignore="LabelFor,autoFill" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/search_button"
+            style="@style/CommonTextStyle"
+            android:layout_height="match_parent"
+            android:paddingStart="10dp"
+            android:paddingTop="11dp"
+            android:paddingEnd="10dp"
+            android:text="@string/search"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/order_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_area"
+        android:orientation="vertical"
+        android:overScrollMode="never"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/blank_view"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:layout_below="@+id/search_area"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/blank_view"
+        android:visibility="gone"
+        tools:ignore="ContentDescription" />
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/shape_dark_circle"
+        android:elevation="4dp"
+        android:text="@string/reset"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+</RelativeLayout>

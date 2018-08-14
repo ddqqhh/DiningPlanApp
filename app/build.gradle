@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.1"
+    defaultConfig {
+        applicationId "com.cxt.dining"
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "dining.apk"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.0-rc01'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0-rc01'
+    implementation 'com.google.android.material:material:1.0.0-rc01'
+
+    // rxandroid
+    // rxkotlin
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    // retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+    // ThreeTenABP
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.1.0'
+    // glide
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+}

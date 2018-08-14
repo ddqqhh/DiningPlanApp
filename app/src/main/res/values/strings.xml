@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">椿熙堂助餐助手</string>
+
+    <string name="ok">确认</string>
+    <string name="cancel">取消</string>
+    <string name="account">账号</string>
+    <string name="reset">重置</string>
+    <string name="password">密码</string>
+    <string name="search">搜索</string>
+    <string name="logout">退出登陆</string>
+    <string name="order_list">订单列表</string>
+
+    <string name="success_submit">提交成功</string>
+
+    <string name="hint_input_account">请输入账号</string>
+    <string name="hint_input_password">请输入密码</string>
+    <string name="hint_input_keyword">请搜索关键字、卡号或身份证号</string>
+
+    <string name="error_net_is_unavailable">请检查网络</string>
+    <string name="error_request_failure">请求失败！</string>
+    <string name="error_account_is_empty">账号不能为空！</string>
+    <string name="error_password_is_empty">密码不能为空！</string>
+
+    <string name="nfc_searching_tip">请把卡片靠近手机</string>
+    <string name="nfc_nonsupport_tip">当前手机不支持刷卡功能</string>
+    <string name="nfc_disable_tip">请在系统设置中启用NFC功能</string>
+
+    <string name="progress_dialog_waiting">请稍等…</string>
+
+    <string name="alert_logout_confirm">确定要退出登录吗</string>
+    <string name="alert_submit_order_confirm"><![CDATA[<font color="#f0a728">%1$s</font>]]> 当日的用餐机会将被使用，确定吗？</string>
+
+    <string name="order_of_card_is_empty">该卡无订单</string>
+
+</resources>

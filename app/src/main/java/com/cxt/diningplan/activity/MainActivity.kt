@@ -101,9 +101,9 @@ class MainActivity : BaseEditTextActivity() {
             val cardCode = encodeCardCode(tag)
             loadOrder(cardCode)
             scanFinishAction = { order ->
-                when (order) {
-                    null -> showToast(getString(R.string.order_of_card_is_empty))
-                    else -> submitAction.invoke(order)
+                when (order?.status) {
+                    OrderStatus.NORMAL -> submitAction.invoke(order)
+                    else -> showToast(getString(R.string.order_of_card_is_empty))
                 }
             }
         }
@@ -161,7 +161,7 @@ class MainActivity : BaseEditTextActivity() {
         showToast(getString(R.string.success_submit))
         order_list.visibility = View.GONE
         blank_view.visibility = View.VISIBLE
-        loadOrder()
+        reset_button.performClick()
     }
 
     private fun encodeCardCode(tagId: ByteArray): String? {
